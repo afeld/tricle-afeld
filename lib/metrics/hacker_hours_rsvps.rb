@@ -9,6 +9,7 @@ class HackerHoursRsvps < Tricle::Metric
   end
 
   def total
-    '-'
+    meetups = MEETUPS_BY_START_TIME.all_items
+    meetups.reduce(0){|sum, event| sum + event['yes_rsvp_count'] }
   end
 end

@@ -4,6 +4,6 @@ class OpenSourceCommits < Tricle::Metric
   end
 
   def total
-    '-'
+    GITHUB_COMMITS_BY_TIME.all_items.length
   end
 end
