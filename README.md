@@ -8,6 +8,7 @@ To preview the app, run
 
 ```bash
 bundle
-bundle exec rake tricle:preview
+# get the GITHUB TOKEN from https://github.com/settings/applications
+GITHUB_TOKEN=... bundle exec shotgun
 open http://localhost:8080
 ```

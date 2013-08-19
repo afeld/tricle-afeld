@@ -70,6 +70,8 @@ GEM
     rack-test (0.6.2)
       rack (>= 1.0)
     rake (10.1.0)
+    shotgun (0.9)
+      rack (>= 1.0)
     thread_safe (0.1.2)
       atomic
     tilt (1.4.1)
@@ -85,4 +87,5 @@ DEPENDENCIES
   faraday
   octokit
   rake
+  shotgun
   tricle!
