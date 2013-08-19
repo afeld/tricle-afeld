@@ -82,6 +82,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  faraday
   octokit
   rake
   tricle!

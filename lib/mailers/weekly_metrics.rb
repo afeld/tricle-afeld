@@ -7,4 +7,8 @@ class WeeklyMetrics < Tricle::Mailer
   group "GitHub" do
     metric OpenSourceCommits
   end
+
+  group "Meetup" do
+    metric HackerHoursRsvps
+  end
 end
