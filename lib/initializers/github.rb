@@ -1,13 +1,16 @@
 require 'octokit'
 require 'tricle/range_data'
 
+token = ENV['GITHUB_TOKEN'] || raise("please set GITHUB_TOKEN - https://github.com/settings/applications")
+client = Octokit::Client.new(login: 'me', oauth_token: token)
+
 GITHUB_COMMITS_BY_TIME = Tricle::RangeData.new
 
-hit_three_weeks_ago = false
-oldest_time = Time.now.beginning_of_week.weeks_ago(3).freeze
+hit_three_months_ago = false
+oldest_time = Time.now.beginning_of_week.weeks_ago(13).freeze
 
 (1..30).each do |page|
-  events = Octokit.user_public_events('afeld', page: page)
+  events = client.user_public_events('afeld', page: page)
 
   events.each do |event|
     time = Time.parse(event['created_at']).to_time
@@ -17,10 +20,13 @@ oldest_time = Time.now.beginning_of_week.weeks_ago(3).freeze
       end
     end
 
-    hit_three_weeks_ago = true if time < oldest_time
+    if time < oldest_time
+      hit_three_months_ago = true
+      break
+    end
   end
 
-  break if hit_three_weeks_ago
+  break if hit_three_months_ago
 end
 
 GITHUB_COMMITS_BY_TIME.freeze
