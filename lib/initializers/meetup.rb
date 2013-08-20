@@ -1,4 +1,5 @@
 require 'faraday'
+require 'json'
 require 'tricle/range_data'
 
 MEETUPS_BY_START_TIME = Tricle::RangeData.new
