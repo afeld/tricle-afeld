@@ -11,4 +11,8 @@ class WeeklyMetrics < Tricle::Mailer
   group "Meetup" do
     metric HackerHoursRsvps
   end
+
+  list TopHaxors do |haxor|
+    %[<a href="http://www.meetup.com/hackerhours/members/#{haxor[:id]}/" target="_blank">#{haxor[:name]}</a>: #{haxor[:rsvps]}]
+  end
 end
