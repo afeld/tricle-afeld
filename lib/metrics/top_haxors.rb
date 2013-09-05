@@ -1,6 +1,6 @@
 class TopHaxors < Tricle::Metric
   def title
-    "Hacker Hours attendees by 'yes' RSVPs"
+    "Haxors by 'yes' RSVPs in past three months"
   end
 
   def items_for_range(start_at, end_at)
