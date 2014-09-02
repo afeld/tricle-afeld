@@ -1,7 +1,7 @@
 require 'octokit'
 require 'tricle/range_data'
 
-token = ENV['GITHUB_TOKEN'] || raise("please set GITHUB_TOKEN - https://github.com/settings/applications")
+token = ENV['GITHUB_TOKEN'] || raise("please set GITHUB_TOKEN – https://github.com/settings/tokens/new?scopes=public_repo")
 
 GITHUB_COMMITS_BY_TIME = Tricle::RangeData.new
 

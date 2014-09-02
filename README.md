@@ -8,7 +8,7 @@ To preview the app, run
 
 ```bash
 bundle
-# get the GITHUB_TOKEN from https://github.com/settings/applications
+# get the GITHUB_TOKEN from https://github.com/settings/tokens/new?scopes=public_repo
 # and the MEETUP_KEY from http://www.meetup.com/meetup_api/key/
 GITHUB_TOKEN=... MEETUP_KEY=... bundle exec shotgun
 open http://localhost:8080
