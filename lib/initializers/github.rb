@@ -7,7 +7,7 @@ GITHUB_COMMITS_BY_TIME = Tricle::RangeData.new
 
 # GitHub restricts this API to 300 events, so the historical numbers may be low
 # http://developer.github.com/v3/activity/events/
-client = Octokit::Client.new(auto_traversal: true, login: 'me', access_token: token)
+client = Octokit::Client.new(auto_paginate: true, login: 'me', access_token: token)
 events = client.user_public_events('afeld')
 
 events.each do |event|
