@@ -11,10 +11,9 @@ client = Octokit::Client.new(auto_traversal: true, login: 'me', oauth_token: tok
 events = client.user_public_events('afeld')
 
 events.each do |event|
-  time = Time.parse(event['created_at']).to_time
   if event['type'] == 'PushEvent'
     event['payload']['commits'].each do |commit|
-      GITHUB_COMMITS_BY_TIME.add(time, commit)
+      GITHUB_COMMITS_BY_TIME.add(event['created_at'], commit)
     end
   end
 end
