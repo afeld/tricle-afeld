@@ -1,3 +1,16 @@
+GIT
+  remote: git://github.com/afeld/tricle.git
+  revision: 34761e091b2a482ec9e710c59360b3270dbbc1da
+  ref: 34761e091b2a482ec9e710c59360b3270dbbc1da
+  specs:
+    tricle (0.2.0)
+      actionmailer (>= 3.2)
+      activesupport (>= 3.2)
+      mail_view (~> 2.0)
+      nokogiri (~> 1.6)
+      premailer (~> 1.7)
+      rack (~> 1.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -61,13 +74,6 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
-    tricle (0.2.0)
-      actionmailer (>= 3.2)
-      activesupport (>= 3.2)
-      mail_view (~> 2.0)
-      nokogiri (~> 1.6)
-      premailer (~> 1.7)
-      rack (~> 1.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
 
@@ -79,4 +85,4 @@ DEPENDENCIES
   octokit
   rake
   shotgun
-  tricle
+  tricle!
