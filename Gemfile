@@ -4,8 +4,8 @@ gem 'faraday'
 gem 'octokit'
 gem 'rake'
 # gem 'tricle', path: '../tricle'
-gem 'tricle', github: 'afeld/tricle', ref: '34761e091b2a482ec9e710c59360b3270dbbc1da'
-# gem 'tricle'
+# gem 'tricle', github: 'afeld/tricle', ref: '2610cd34212ccc7223ce4c9e920eb21142c111e3'
+gem 'tricle'
 
 group :development do
   gem 'shotgun'
