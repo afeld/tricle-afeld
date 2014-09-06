@@ -6,6 +6,13 @@ class HackerHoursLeaderboard < Tricle::Mailer
   end
 
   list TopHaxors do |haxor|
-    %[<a href="http://www.meetup.com/hackerhours/members/#{haxor[:id]}/" target="_blank">#{haxor[:name]}</a>: #{haxor[:rsvps]}]
+    url = "http://www.meetup.com/hackerhours/members/#{haxor[:id]}/"
+    <<-HTML
+      <a href="#{url}" target="_blank" style="text-decoration:none">
+        <img src="#{haxor[:photo]}" width="90"/>
+      </a>
+      <a href="#{url}" target="_blank">#{haxor[:name]}:</a>
+      #{haxor[:rsvps]}
+    HTML
   end
 end

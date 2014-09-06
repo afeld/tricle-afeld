@@ -42,7 +42,7 @@ response = Faraday.get('http://api.meetup.com/2/rsvps',
   event_id: event_ids.join(','),
   format: 'json',
   key: key,
-  only: 'event,member',
+  only: 'event,member,member_photo',
   rsvp: 'yes'
 )
 

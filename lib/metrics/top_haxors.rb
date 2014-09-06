@@ -13,6 +13,11 @@ class TopHaxors < Tricle::Metric
       haxors_by_id[member_id] ||= { id: member_id, rsvps: 0 }
       haxors_by_id[member_id][:name] ||= member['name']
       haxors_by_id[member_id][:rsvps] += 1
+
+      photos = rsvp['member_photo']
+      if photos
+        haxors_by_id[member_id][:photo] ||= photos['photo_link']
+      end
     end
 
     # by number of "yes" RSVPs, descending
