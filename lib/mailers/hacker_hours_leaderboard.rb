@@ -9,7 +9,7 @@ class HackerHoursLeaderboard < Tricle::Mailer
     url = "http://www.meetup.com/hackerhours/members/#{haxor[:id]}/"
     <<-HTML
       <a href="#{url}" target="_blank" style="text-decoration:none">
-        <img src="#{haxor[:photo]}" width="90"/>
+        <img src="#{haxor[:photo]}" width="90" alt="avatar"/>
       </a>
       <a href="#{url}" target="_blank">#{haxor[:name]}:</a>
       #{haxor[:rsvps]}
