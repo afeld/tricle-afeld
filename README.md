@@ -16,6 +16,4 @@ open http://localhost:8080
 
 ## Deploying
 
-1. Deploy app to Heroku
-1. Set up SendGrid with `heroku addons:add sendgrid`
-1. Set up Heroku Scheduler to run `rake tricle:emails:send`, or trigger manually with `heroku run rake tricle:emails:send`
+See general [deployment instructions](https://github.com/afeld/tricle#deploying), and use SendGrid as the mail provider with `SENDGRID_USERNAME` and `SENDGRID_PASSWORD` environment variables (set automatically by enabling the Heroku Addon: `heroku addons:add sendgrid`).
