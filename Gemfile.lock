@@ -61,7 +61,7 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
-    tricle (0.2.2)
+    tricle (0.2.3)
       actionmailer (>= 3.2)
       activesupport (>= 3.2)
       mail_view (~> 2.0)
