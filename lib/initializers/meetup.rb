@@ -2,8 +2,8 @@ require 'faraday'
 require 'json'
 require 'tricle/range_data'
 
-key = ENV['MEETUP_KEY'] || raise("please set MEETUP_KEY - http://www.meetup.com/meetup_api/auth/#keys")
-key.freeze
+MEETUP_KEY = ENV['MEETUP_KEY'] || raise("please set MEETUP_KEY - http://www.meetup.com/meetup_api/auth/#keys")
+MEETUP_KEY.freeze
 
 MEETUPS_BY_START_TIME = Tricle::RangeData.new
 
@@ -12,7 +12,7 @@ response = Faraday.get('http://api.meetup.com/2/events',
   desc: false,
   format: 'json',
   group_urlname: 'hackerhours',
-  key: key,
+  key: MEETUP_KEY,
   limited_events: 'False',
   offset: 0,
   only: 'id,time,yes_rsvp_count',
@@ -41,7 +41,7 @@ RSVPS_BY_MEETUP_TIME = Tricle::RangeData.new
 response = Faraday.get('http://api.meetup.com/2/rsvps',
   event_id: event_ids.join(','),
   format: 'json',
-  key: key,
+  key: MEETUP_KEY,
   only: 'event,member,member_photo',
   rsvp: 'yes'
 )

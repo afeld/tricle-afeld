@@ -6,6 +6,7 @@ class WeeklyMetrics < Tricle::Mailer
   end
 
   group "Meetup" do
+    metric HackerHoursMembers
     metric HackerHoursRsvps
   end
 end
